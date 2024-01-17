@@ -36,6 +36,10 @@ async function run() {
             const result = await productCollection.find().toArray();
             res.send(result);
         })
+        app.get("/porductscount" , async(req,res)=>{
+            const count = await productCollection.estimatedDocumentCount();
+            res.send({count})
+        })
 
 
 
